@@ -165,3 +165,7 @@ label {
 .delete:hover svg {
   fill: #8b0e16;
 }
+.main-list h1 {
+  font: var(--h1);
+  text-align: center;
+}

@@ -7,14 +7,11 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (addField.value.trim().length > 0) {
     addElement();
-
     addField.value = "";
   }
 });
 window.addEventListener("load", function () {
-  console.log(todoArray);
   todoArray.forEach((item) => {
-    console.log(item);
     let createElement = document.createElement("li");
     let createInput = document.createElement("input");
     let createLable = document.createElement("label");
@@ -69,6 +66,7 @@ window.addEventListener("load", function () {
     });
     todoList.append(createElement);
   });
+  noElements();
 });
 function addElement() {
   const todo = {
@@ -138,4 +136,15 @@ function addElement() {
 function saveLocal() {
   let localArray = JSON.stringify(todoArray);
   localStorage.setItem("todos", localArray);
+  noElements();
+}
+console.log(todoList.childElementCount);
+
+function noElements() {
+  const h1 = todoList.querySelector("h1");
+  if (todoList.querySelectorAll(".list-item").length > 0) {
+    h1.style.display = "none";
+  } else {
+    h1.style.display = "block";
+  }
 }
