@@ -169,3 +169,35 @@ label {
   font: var(--h1);
   text-align: center;
 }
+.filter {
+  width: 100%;
+  padding: var(--size-m);
+  background-color: var(--card);
+  border-radius: var(--size-m);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.filter button {
+  width: fit-content;
+  outline: none;
+  border: 1px solid transparent;
+  padding: var(--size-s);
+  font: var(--p);
+  border-radius: var(--size-m);
+  background-color: var(--border);
+  color: var(--main-t);
+  transition: var(--trans-d);
+  cursor: pointer;
+}
+.filter button:hover {
+  background-color: var(--accent-c);
+  box-shadow: 0 0 20px var(--accent-c);
+  transform: scale(1.1);
+}
+.filter button.active-filter {
+  background-color: var(--main-c);
+  box-shadow: 0 0 20px var(--main-c);
+  transform: scale(1.1);
+}
